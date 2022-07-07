@@ -1,0 +1,123 @@
+* {
+    margin: 0; /* preenchimento externo */
+    padding: 0; /* preenchimento interno */
+    /* colocando border-box todo ajuste de margem ou padding que voce der ele nao aumenta o tamanho do container e sim aumenta a margem do conteudo que está no container, caso estivesse em content-box qualquer padding ou margem que fosse ajustada ele aumentaria o tamanho do container */
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  html {
+    /* variaveis em css */
+    --bg-color: #EDF2FF;
+    --text-color: #00082F;
+    --primary-color: #4263EB;
+    --primary-color-dark: #364FC7;
+  }
+  
+  body.dark-blue {
+    --bg-color: #00082F;
+    --text-color: #FFFFFF;
+  }
+  
+  body.pink {
+    --bg-color: #FFF0F6;
+    --text-color: #1F000B;
+    --primary-color: #D6336C;
+    --primary-color-dark: #A61E4D;
+  }
+  
+  body.dark-pink {
+    --bg-color: #1F000B;
+    --text-color: #FFFFFF;
+    --primary-color: #D6336C;
+    --primary-color-dark: #A61E4D;
+  }
+  
+  body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .container {
+    /* border: 7px red solid;  borda da caixa */
+    text-align: center;
+    width: 300px; /* largura da caixa */
+    margin: 60px auto;
+  }
+  
+  img {
+    /* % quer dizer que a imagem vai sempre seguir o padrão relativo a caixa que ela está no caso container, então se o container tem 300px e a imagem tem 100% ela ocupa 100% de 300px. */
+    width: 100%;
+  }
+  
+  img.avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 3.7px;
+    border: var(--primary-color) 4px solid;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .username {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    opacity: 0.8;
+    font-size: 18px;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 48px 0;
+  }
+  
+  
+  ul li a {
+    height: 53px;
+    /*
+    display é uma propriedade relativa de como as caixas se comportam em relação as caixas irmãs as caixas que estão ao lado delas
+    display inline - toda caixa que colocar do lado da outra que tambem forem inline elas vão ficar em linha, ela ocupa tambem so o tamanho do conteudo, nao recebendo propriedades de altura, largura, margem.
+    diaplay block - pode receber largura, margem, não mantem em linha, joga os elementos um pra baixo e o outro pra cima, e o conteudo dele é a largura toda.
+    */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color); /* 0 - f; os dois primeiros numeros equivalem ao vermelho, os segundos ao verde e os dois ultimos o azul*/
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+  
+    margin-bottom: 16px;
+    border-radius: 6px;
+  
+    transition: background 400ms; /* determina o delay de transição da cor do background do botão */
+  }
+  
+  /* pseudo-class - quando passar o mouse em cima vai fazer alguma alteração*/
+  ul li a:hover {
+    background: var(--primary-color-dark);
+  }
+  
+  footer {
+    font-weight: 500;
+    font-size: 12px;
+    opacity: 0.6;
+    transition: opacity 400ms;
+  }
+  
+  footer:hover {
+    opacity: 1;
+  }
+  
+  footer a {
+    color: var(--text-color);
+  }
